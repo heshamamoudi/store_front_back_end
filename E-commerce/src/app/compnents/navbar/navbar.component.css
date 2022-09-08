@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    background: crimson;
+    padding: 20px 100px 20px 100px;
+    color: white;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.bars{
+    display: none;
+}
+.brand{
+    display: flex;
+}
+.links-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.links-list li{
+    
+    margin: 0 0 0 10px;
+}
+.links-list a{
+    color: white;
+    text-decoration: none;
+}
+.btn{
+    border: none;
+    background-color: rgb(19, 19, 19);
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+}

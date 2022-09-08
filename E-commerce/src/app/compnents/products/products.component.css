@@ -1,0 +1,10 @@
+.ctr{
+    justify-items: center;
+    justify-content: center;
+    margin: auto;
+    display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 200px));
+  max-width: 1000px;
+    
+}

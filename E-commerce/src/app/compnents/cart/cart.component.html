@@ -1,0 +1,45 @@
+<div *ngIf="cart.length; else nullCart" class="container">
+    <div class="row">
+        <div class="col no-gutters">
+            <div class="cart-panel">
+                <div class="cart-item" *ngFor="let product of cart">
+                    <img class="product-image" src='{{ product.urlimage }}'>
+                    <div class="cart-panel">
+                    <div class="product_data"><b>{{ product.name}}</b></div>
+                    <div class="product_data">${{ product.price}}</div>
+                    <div class="product_data">
+                        <select [ngModel]="product.quantity" (ngModelChange)="changeOption(product, $event)" style="width: 100px;" class="form-select" aria-label="Default select example">
+                                <option  *ngFor="let option of product_options" [ngValue]="option" 
+                                [selected]="product.quantity">{{option}}</option>
+            
+                        </select>
+                       
+                    </div>
+                    <div class="product_data">
+                        <button (click)="removeFromCart(product)"  class="product_data btn btn-warning">Remove</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="cart-item"><h2><b>Total: ${{total}}</b></h2></div>
+            </div>
+        </div>
+        <div class="col no-gutters">
+            <form #form="ngForm" (ngSubmit)="onSubmit(Fname,Address,CCN)">
+                <div class="user-panel">
+                <label class="user-detail" for="fullName">Full Name</label>
+                <input required minlength="3" class="user-detail form-control" type="text" name="fullName" [(ngModel)]="Fname">
+                <label class="user-detail" for="Address">Address</label>
+                <input required minlength="3" class="user-detail form-control" type="text" name="Address" [(ngModel)]="Address">
+                <label class="user-detail" for="CCN">Credit Card Number</label>
+                <input required minlength="19" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="user-detail form-control" type="text"  name="CCN" [(ngModel)]="CCN">
+                <h6 class="user-detail" style="font-size: 11px; color: darkgray;">We will never share your payment details with anyone else.</h6>
+                <button type="submit" [disabled]="form.invalid" class="product-info btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template #nullCart>
+    <div class="empty-cart-message">
+        <h1>You Need to add products From  <a routerLink="/">Shop</a></h1>
+    </div>

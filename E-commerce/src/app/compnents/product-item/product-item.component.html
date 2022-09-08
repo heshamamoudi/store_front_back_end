@@ -1,0 +1,24 @@
+<div class="containerr">
+    
+    <div class="img">
+        <img src='{{Products.urlimage}}'>
+        
+    </div>
+    <div class="info">
+        <p>Name:{{Products.name}}</p>
+        <p>Category:{{Products.category}}</p>
+        <p>Price:{{Products.price}}</p>
+    </div>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="select">quantity:</label>
+    <select type="select"class="quant"  name="select"   [(ngModel)]="quants">
+        <option  *ngFor="let option of option_list" [ngValue]="option" 
+            [selected]="option === 1">{{option}}</option>
+    </select>
+    </div>
+        
+        <input type="submit" value="Add to Cart" class="cart-btn">
+    </form>
+
+</div>
