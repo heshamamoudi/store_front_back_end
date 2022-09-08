@@ -36,13 +36,10 @@ please run this command to insert product tables
 
 
 ## install packages (dependencies):
-
+cd to backend npm install.
 open directory/file in terminal and npm install.
-cd to build_storefront_backend npm install.
 
-## run migrations to create tables:
-- db-migrate up
-- npx db-migrate up
+
 
 ## create .env file:
 create environment file and write 
