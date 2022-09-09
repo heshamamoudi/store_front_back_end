@@ -2,7 +2,7 @@
 Front End project connect with the udacity previous project [Back-End]
 
 ## Description:
-![E-commerce](https://user-images.githubusercontent.com/67551590/189344366-44ad9a27-3f95-4d27-8dce-62762396a6c9.gif)
+![E-commerce](https://user-images.githubusercontent.com/67551590/189369333-3df428cb-2a56-44c4-89ba-2f189ff0880a.gif)
 - lists a list of products
 - adds products to cart
 - calculate total
