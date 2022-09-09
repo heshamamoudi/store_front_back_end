@@ -1,11 +1,23 @@
 # ECommerce
 Front End project connect with the udacity previous project [Back-End]
 
+## Description:
+![E-commerce](https://user-images.githubusercontent.com/67551590/189344366-44ad9a27-3f95-4d27-8dce-62762396a6c9.gif)
+- lists a list of products
+- adds products to cart
+- calculate total
+- proceed to check out
+
 ## Development server
 you have to check that backend project working properly before running front end
 to run application use:
 - npm install
 - ng serve
+### compnents
+- cart: where all selected products are stored
+- navbar: redirection asset
+- products: lists the products
+- product item: shows product properties
 
 
 ## Build
