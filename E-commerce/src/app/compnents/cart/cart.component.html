@@ -27,14 +27,36 @@
             <form #form="ngForm" (ngSubmit)="onSubmit(Fname,Address,CCN)">
                 <div class="user-panel">
                 <label class="user-detail" for="fullName">Full Name</label>
-                <input required minlength="3" class="user-detail form-control" type="text" name="fullName" [(ngModel)]="Fname">
+                <input required minlength="3" class="user-detail form-control" type="text" name="fullName" #Name="ngModel" [(ngModel)]="Fname">
                 <label class="user-detail" for="Address">Address</label>
-                <input required minlength="3" class="user-detail form-control" type="text" name="Address" [(ngModel)]="Address">
+                <input required minlength="3" class="user-detail form-control" type="text" name="Address" #address="ngModel" [(ngModel)]="Address">
                 <label class="user-detail" for="CCN">Credit Card Number</label>
-                <input required minlength="19" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="user-detail form-control" type="text"  name="CCN" [(ngModel)]="CCN">
+                <input required minlength="19" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" #card="ngModel"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="user-detail form-control" type="text"  name="CCN" [(ngModel)]="CCN">
                 <h6 class="user-detail" style="font-size: 11px; color: darkgray;">We will never share your payment details with anyone else.</h6>
                 <button type="submit" [disabled]="form.invalid" class="product-info btn btn-primary">Submit</button>
                 </div>
+                <div *ngIf="Name.invalid && Name.dirty">
+                    <div *ngIf="Name.errors?.['required']">
+                      Please provide your name.
+                    </div>
+                    <div *ngIf="Name.errors?.['minlength']">
+                      Your name must be at least 3 characters long.
+                    </div>
+                  </div>
+                  <div *ngIf="address.invalid && address.dirty">
+                    <div *ngIf="address.errors?.['required']">
+                      Please provide your address.
+                    </div>
+                  </div>
+            
+                  <div *ngIf="card.invalid && card.dirty">
+                    <div *ngIf="card.errors?.['required']">
+                      Please provide your credit card number.
+                    </div>
+                    <div *ngIf="card.errors?.['minlength']">
+                      Your credit card must be at least 19 characters long.
+                    </div>
+                  </div>
             </form>
         </div>
     </div>

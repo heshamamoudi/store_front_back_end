@@ -15,7 +15,7 @@ getProducts():Observable<Product[]>{
   return this.http.get<Product[]>("http://localhost:5000/products")
 }
 
-getProduct(id:number):Observable<Product[]>{
-  return this.http.get<Product[]>(`http://localhost:5000/products/:${id}`)
+getProduct(id:number):Observable<Product>{
+  return this.http.get<Product>(`http://localhost:5000/products/${id}`)
 }
 }

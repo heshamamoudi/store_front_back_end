@@ -9,6 +9,7 @@ import { ProductItemComponent } from './compnents/product-item/product-item.comp
 import { CartComponent } from './compnents/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './compnents/checkout/checkout.component';
+import { ProductDetailsComponent } from './compnents/product-details/product-details.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CheckoutComponent } from './compnents/checkout/checkout.component';
     ProductItemComponent,
     CartComponent,
     CheckoutComponent,
+    ProductDetailsComponent,
 
 
   ],
